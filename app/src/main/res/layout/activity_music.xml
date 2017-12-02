@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.yahia.myapplication.Music">
+    <ToggleButton
+        android:id="@+id/tb_love"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="@dimen/space16"
+        android:textOff=""
+        android:textOn=""
+        android:button="@drawable/toggle_button"
+        android:background="@null"/>
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/space16"
+        android:weightSum="5"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@null"
+            android:onClick="seekBack"
+            android:src="@drawable/ic_backward" />
+
+        <ImageButton
+            android:layout_width="184dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@null"
+            android:onClick="togglePause"
+            android:src="@drawable/ic_play" />
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@null"
+            android:onClick="seekForward"
+            android:src="@drawable/ic_forward" />
+
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/rl_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_above="@+id/ll_bottom"
+        android:layout_alignRight="@+id/tb_love"
+        android:layout_alignEnd="@+id/tb_love">
+
+        <TextView
+            android:id="@+id/tv_current_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginStart="40dp"
+            android:text="0:00"
+            android:textColor="@color/colorTextGrey"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_full_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="4:20"
+            android:textColor="@color/colorTextGrey"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_artist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rl_progress"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="36dp"
+        android:textColor="@color/colorTextGrey"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_song"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_artist"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="34dp"
+        android:textColor="@color/colorTextDark"
+        android:textSize="18sp" />
+
+    <SeekBar
+        android:id="@+id/seekbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/rl_progress"
+        android:layout_alignLeft="@+id/tv_artist"
+        android:layout_alignStart="@+id/tv_artist"
+        android:layout_toLeftOf="@+id/tb_love"
+        android:layout_toStartOf="@+id/tb_love" />
+</RelativeLayout>
